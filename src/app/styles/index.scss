@@ -1,0 +1,40 @@
+@import "reset";
+@import "vars/global";
+@import "themes/main";
+
+.App {
+  font: var(--font-m);
+  color: var(--color-primary);
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--light-bg-redesigned);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--icon-redesigned);
+  border-radius: 20px;
+  border: 1px solid var(--accent-redesigned);
+}
+
+.App *::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+.App *::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+
+.App *::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-invert);
+  border-radius: 20px;
+  border: 2px solid var(--color-primary);
+}
