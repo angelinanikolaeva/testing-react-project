@@ -1,5 +1,6 @@
 import { memo, MutableRefObject, ReactNode, useRef } from "react";
 import cls from "./Page.module.scss";
+import { classNames } from "@/shared/lib/classNames/classNames";
 
 interface PageProps {
   className?: string;
@@ -15,7 +16,7 @@ export const Page = memo((props: PageProps) => {
   return (
     <main
       ref={wrapperRef}
-      className={[cls.Page, className].join(" ")}
+      className={classNames(cls.Page, {}, [className])}
       id={PAGE_ID}>
       {children}
     </main>

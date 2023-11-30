@@ -1,8 +1,8 @@
-import { ReducersMapObject, combineReducers } from "redux";
-import { StoreState } from "./StoreState";
-import createSagaMiddleware from "redux-saga";
+import { CombinedState, Reducer, ReducersMapObject } from "redux";
+import { StoreState, ThunkExtraArg } from "./StoreState";
 import { configureStore } from "@reduxjs/toolkit";
-import rootSaga from "./rootSaga";
+import { createReducerManager } from "./reducerManager";
+import { $api } from "@/shared/api/api";
 
 export function createReduxStore(
   initialState?: StoreState,
@@ -12,17 +12,27 @@ export function createReduxStore(
     ...asyncReducers,
   };
 
-  const combinedReducers = combineReducers(rootReducers);
+  const reducerManager = createReducerManager(rootReducers);
 
-  const sagaMiddleware = createSagaMiddleware();
+  const extraArg: ThunkExtraArg = {
+    api: $api,
+  };
   const store = configureStore({
-    reducer: combinedReducers,
+    reducer: reducerManager.reduce as Reducer<CombinedState<StoreState>>,
+    devTools: true,
     preloadedState: initialState,
     middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(sagaMiddleware),
+      getDefaultMiddleware({
+        thunk: {
+          extraArgument: extraArg,
+        },
+      }),
   });
 
-  sagaMiddleware.run(rootSaga);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore
+  store.reducerManager = reducerManager;
+
   return store;
 }
 

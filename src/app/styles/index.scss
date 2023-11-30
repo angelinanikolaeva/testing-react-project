@@ -10,31 +10,29 @@
 }
 
 *::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   height: 6px;
 }
 
 *::-webkit-scrollbar-track {
-  background: var(--light-bg-redesigned);
+  background: #9498a1;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: var(--icon-redesigned);
-  border-radius: 20px;
-  border: 1px solid var(--accent-redesigned);
+  background-color: #9498a1;
+  border-radius: 12px;
 }
 
 .App *::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   height: 6px;
 }
 
 .App *::-webkit-scrollbar-track {
-  background: var(--card-bg);
+  background: #ffffff;
 }
 
 .App *::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary-invert);
+  background-color: #9498a1;
   border-radius: 20px;
-  border: 2px solid var(--color-primary);
 }

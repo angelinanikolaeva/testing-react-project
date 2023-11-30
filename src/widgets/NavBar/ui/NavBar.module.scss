@@ -1,9 +1,19 @@
 .NavBar {
   width: 100%;
   height: var(--navbar-height);
-  background: var(--color-bg-invert);
-  color: var(--color-primary-invert);
+  background: var(--color-bg);
+  border-bottom: 2px solid var(--color-secondary);
+  color: var(--color-text);
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 0 50px;
+  gap: 10%;
+}
+
+.NavBarButton {
+  margin-left: auto;
+}
+
+.NavBarLink {
+  font: var(--font-l);
 }

@@ -1,4 +1,6 @@
+import { classNames } from "@/shared/lib/classNames/classNames";
 import cls from "./ErrorPage.module.scss";
+import { BaseButton } from "@/shared/ui/BaseButton";
 
 interface ErrorPageProps {
   className?: string;
@@ -9,11 +11,10 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
     location.reload();
   };
 
-  // TODO: change to custom button
   return (
-    <div className={[cls.ErrorPage, className].join(" ")}>
+    <div className={classNames(cls.ErrorPage, {}, [className])}>
       <p>Something went wrong...</p>
-      <button onClick={reloadPage}>Reload page</button>
+      <BaseButton onClick={reloadPage}>Reload page</BaseButton>
     </div>
   );
 };

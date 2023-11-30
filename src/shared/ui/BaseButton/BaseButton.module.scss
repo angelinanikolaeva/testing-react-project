@@ -1,0 +1,23 @@
+.BaseButton {
+  cursor: pointer;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  color: var(--color-white);
+  border-radius: 12px;
+  background-color: var(--color-main);
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: var(--color-main-hover);
+  }
+}
+
+.m {
+  font: var(--font-m-redesigned);
+}
+
+.disabled {
+  opacity: 0.5;
+}
