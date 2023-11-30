@@ -12,8 +12,8 @@ pnpm install
 pnpm dev
 
 Todo list (in progress):
-[] - rerwite Redux Thunk to Redux Saga
-[] - add sidebar
-[] - add state for shopping cart
-[] - add dynamic columns
-[] - add dynamic sorting
+- rerwite Redux Thunk to Redux Saga
+- add sidebar
+- add state for shopping cart
+- add dynamic columns
+- add dynamic sorting
